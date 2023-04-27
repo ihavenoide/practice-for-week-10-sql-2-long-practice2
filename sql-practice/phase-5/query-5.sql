@@ -6,6 +6,7 @@
 -- ON(cat_owners.cat_id = cats.id AND cat_owners.owner_id = owners.id)
 -- WHERE owners.first_name = "George" and owners.first_name = "Melynda"
 -- WHERE owners.first_name IN('George' , 'Melynda') AND owners.last_name IN( 'Beatty','Abshire')
+
 SELECT cats.name
 FROM cats
 JOIN cat_owners ON (cats.id = cat_owners.cat_id)
