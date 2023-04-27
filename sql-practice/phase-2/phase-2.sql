@@ -22,13 +22,13 @@ CREATE TABLE owners (
 CREATE TABLE toys (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(50),
-    cat_id INTEGER REFERENCES cats(id)
+    cat_id INTEGER REFERENCES cats(id) ON DELETE CASCADE
 );
 
 CREATE TABLE cat_owners (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cat_id INTEGER REFERENCES cats(id),
-    owner_id INTEGER REFERENCES owners(id)
+    cat_id INTEGER REFERENCES cats(id) ON DELETE CASCADE,
+    owner_id INTEGER REFERENCES owners(id) ON DELETE CASCADE
 );
 
 INSERT INTO owners
