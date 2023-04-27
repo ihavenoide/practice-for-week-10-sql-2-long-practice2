@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS cats;
+DROP TABLE IF EXISTS owners;
+DROP TABLE IF EXISTS toys;
+
+
+CREATE TABLE cats (
+    id  INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50),
+    birth_year INTEGER
+);
+
+CREATE TABLE owners (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR
+);
+
+CREATE TABLE toys (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50),
+    cats_id INTEGER REFERENCES cats(id)
+);
+
+CREATE TABLE cats_owners (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cats_id INTEGER REFERENCES cats(id),
+    owners_id INTEGER REFERENCES owners(id)
+);
